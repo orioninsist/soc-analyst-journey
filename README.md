@@ -30,6 +30,35 @@ soc-analyst-journey/
 
 Each lab should ideally include its source code, required setup, a safe sample dataset, a run command, and a reproducible verification result. No unverified achievements or fabricated screenshots.
 
+## SOC L1 practical build queue
+
+These are **planned exercises, not completed projects**. A lab is added to this repository only after its commands, sample inputs, and expected outputs have been tested.
+
+| Order | Lab | Practical skill | Minimum reproducible evidence |
+| --- | --- | --- | --- |
+| 1 | Windows failed-logon triage | Event ID 4625, account/IP/time correlation | Synthetic event dataset, parsing script, assertions |
+| 2 | DNS investigation | DNS queries, suspicious patterns, context | Sanitized DNS log, filter script, expected matches |
+| 3 | Web access log triage | HTTP status codes, bursts, user agents | Synthetic access log, detection query, test cases |
+| 4 | Sigma detection validation | Rule conditions, false positives | Sigma rule, synthetic positive/negative events |
+| 5 | SIEM query practice | SPL/KQL filtering and aggregation | Queries, sample schema, expected results |
+| 6 | SOC incident reporting | Evidence, scope, severity, escalation | Sanitized case report based on a verified lab |
+
+### Definition of done for every lab
+
+- [ ] Scope, assumptions, and authorized test environment are documented.
+- [ ] Sample inputs are synthetic or properly sanitized.
+- [ ] Exact setup and run commands are included.
+- [ ] Expected output is provided and reproducible.
+- [ ] Positive and negative test cases are included where applicable.
+- [ ] Detection limitations and possible false positives are explained.
+- [ ] No secrets, private logs, or unverified investigation claims are published.
+
+### Recommended investigation workflow
+
+`Alert → validate telemetry → establish timeline → enrich indicators → assess impact → document findings → escalate when warranted`
+
+For SOC L1 work, prioritize evidence-backed triage and clear escalation over premature attribution. An IOC reputation hit or a single event ID alone does not establish malicious activity.
+
 ## When to create a separate repository
 
 **Not every script needs its own repository.** Keep small exercises here. Extract a project into its own public repository only when it becomes a meaningful standalone tool or portfolio piece, with clear scope, independent usage instructions, tests, and maintainable code.
